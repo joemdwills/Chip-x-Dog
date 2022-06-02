@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ListResponse: Codable {
+struct Dogs: Codable {
     let message: Breeds
     let status: String
 }

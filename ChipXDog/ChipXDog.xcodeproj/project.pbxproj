@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E77DFDB2849163F00F5B2AB /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDA2849163F00F5B2AB /* DogAPI.swift */; };
+		0E77DFDE2849183900F5B2AB /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDD2849183900F5B2AB /* DogService.swift */; };
+		0E77DFE0284918B300F5B2AB /* HTTPWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDF284918B300F5B2AB /* HTTPWebService.swift */; };
+		0E77DFE228491CEA00F5B2AB /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE128491CEA00F5B2AB /* APICall.swift */; };
+		0E77DFE528492ECA00F5B2AB /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE428492ECA00F5B2AB /* URLSession+.swift */; };
+		0E77DFE728492F3100F5B2AB /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE628492F3100F5B2AB /* HTTPError.swift */; };
 		0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC612842B0A800365D3B /* AppDelegate.swift */; };
 		0EE5CC642842B0A800365D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC632842B0A800365D3B /* SceneDelegate.swift */; };
 		0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC652842B0A800365D3B /* ListViewController.swift */; };
@@ -39,6 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E77DFDA2849163F00F5B2AB /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
+		0E77DFDD2849183900F5B2AB /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
+		0E77DFDF284918B300F5B2AB /* HTTPWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPWebService.swift; sourceTree = "<group>"; };
+		0E77DFE128491CEA00F5B2AB /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
+		0E77DFE428492ECA00F5B2AB /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
+		0E77DFE628492F3100F5B2AB /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
 		0EE5CC5E2842B0A800365D3B /* ChipXDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChipXDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE5CC612842B0A800365D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE5CC632842B0A800365D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +94,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E77DFDC2849182B00F5B2AB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0E77DFDD2849183900F5B2AB /* DogService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0E77DFE328492EA400F5B2AB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0E77DFE428492ECA00F5B2AB /* URLSession+.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		0EE5CC552842B0A800365D3B = {
 			isa = PBXGroup;
 			children = (
@@ -137,8 +165,10 @@
 		0EE5CC912842B0B600365D3B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E77DFE328492EA400F5B2AB /* Utilities */,
+				0E77DFDC2849182B00F5B2AB /* Services */,
 				0EE5CC962842B20E00365D3B /* Networking */,
-				0EE5CC952842B20700365D3B /* Data */,
+				0EE5CC952842B20700365D3B /* Classes */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,18 +198,22 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		0EE5CC952842B20700365D3B /* Data */ = {
+		0EE5CC952842B20700365D3B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0EE5CC972842B8DB00365D3B /* Dogs.swift */,
 				0EE5CC992842BA4300365D3B /* Breeds.swift */,
+				0E77DFDA2849163F00F5B2AB /* DogAPI.swift */,
+				0EE5CC972842B8DB00365D3B /* Dogs.swift */,
 			);
-			path = Data;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		0EE5CC962842B20E00365D3B /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				0E77DFE128491CEA00F5B2AB /* APICall.swift */,
+				0E77DFE628492F3100F5B2AB /* HTTPError.swift */,
+				0E77DFDF284918B300F5B2AB /* HTTPWebService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -316,11 +350,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EE5CC9A2842BA4300365D3B /* Breeds.swift in Sources */,
+				0E77DFDB2849163F00F5B2AB /* DogAPI.swift in Sources */,
+				0E77DFE228491CEA00F5B2AB /* APICall.swift in Sources */,
 				0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */,
+				0E77DFE728492F3100F5B2AB /* HTTPError.swift in Sources */,
 				0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */,
 				0EE5CC9D284901AB00365D3B /* DetailViewController.swift in Sources */,
 				0EE5CC982842B8DB00365D3B /* Dogs.swift in Sources */,
+				0E77DFDE2849183900F5B2AB /* DogService.swift in Sources */,
+				0E77DFE528492ECA00F5B2AB /* URLSession+.swift in Sources */,
 				0EE5CC642842B0A800365D3B /* SceneDelegate.swift in Sources */,
+				0E77DFE0284918B300F5B2AB /* HTTPWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
