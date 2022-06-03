@@ -13,6 +13,8 @@
 		0E77DFE228491CEA00F5B2AB /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE128491CEA00F5B2AB /* APICall.swift */; };
 		0E77DFE528492ECA00F5B2AB /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE428492ECA00F5B2AB /* URLSession+.swift */; };
 		0E77DFE728492F3100F5B2AB /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE628492F3100F5B2AB /* HTTPError.swift */; };
+		0E77DFE928497E1F00F5B2AB /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFE828497E1F00F5B2AB /* Images.swift */; };
+		0E77DFEB284A5B1D00F5B2AB /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFEA284A5B1D00F5B2AB /* Breed.swift */; };
 		0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC612842B0A800365D3B /* AppDelegate.swift */; };
 		0EE5CC642842B0A800365D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC632842B0A800365D3B /* SceneDelegate.swift */; };
 		0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC652842B0A800365D3B /* ListViewController.swift */; };
@@ -51,6 +53,8 @@
 		0E77DFE128491CEA00F5B2AB /* APICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		0E77DFE428492ECA00F5B2AB /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
 		0E77DFE628492F3100F5B2AB /* HTTPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPError.swift; sourceTree = "<group>"; };
+		0E77DFE828497E1F00F5B2AB /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		0E77DFEA284A5B1D00F5B2AB /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		0EE5CC5E2842B0A800365D3B /* ChipXDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChipXDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE5CC612842B0A800365D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE5CC632842B0A800365D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				0EE5CC992842BA4300365D3B /* Breeds.swift */,
 				0E77DFDA2849163F00F5B2AB /* DogAPI.swift */,
 				0EE5CC972842B8DB00365D3B /* Dogs.swift */,
+				0E77DFE828497E1F00F5B2AB /* Images.swift */,
+				0E77DFEA284A5B1D00F5B2AB /* Breed.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -353,9 +359,11 @@
 				0E77DFDB2849163F00F5B2AB /* DogAPI.swift in Sources */,
 				0E77DFE228491CEA00F5B2AB /* APICall.swift in Sources */,
 				0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */,
+				0E77DFE928497E1F00F5B2AB /* Images.swift in Sources */,
 				0E77DFE728492F3100F5B2AB /* HTTPError.swift in Sources */,
 				0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */,
 				0EE5CC9D284901AB00365D3B /* DetailViewController.swift in Sources */,
+				0E77DFEB284A5B1D00F5B2AB /* Breed.swift in Sources */,
 				0EE5CC982842B8DB00365D3B /* Dogs.swift in Sources */,
 				0E77DFDE2849183900F5B2AB /* DogService.swift in Sources */,
 				0E77DFE528492ECA00F5B2AB /* URLSession+.swift in Sources */,
