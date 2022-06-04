@@ -162,8 +162,6 @@ public enum HTTPStatus: Int {
 
 
 extension HTTPStatus {
-    /// Initializes an HTTPStatus enum with a given numeric status code
-    /// - parameter code: The HTTP response code
     init(code: Int) {
         if let validStatus = HTTPStatus(rawValue: code) {
             self = validStatus
@@ -173,8 +171,6 @@ extension HTTPStatus {
         }
     }
     
-    
-    /// The category the status code belongs to
     var category: Category {
         let code = self.rawValue
         if code >= 100 && code < 200 {

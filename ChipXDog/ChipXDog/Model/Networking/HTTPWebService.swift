@@ -16,7 +16,6 @@ extension HTTPWebService {
     func call(endpoint: APICall, method: String = "GET", completion: @escaping (_ result: Result<Data, Error>) -> Void) {
         do {
             let request = try endpoint.createURLRequest(baseURL: baseURL, method: method)
-            // Make the request
             session.startData(request) { result in
                 completion(result)
             }

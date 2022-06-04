@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class DetailViewController: UICollectionViewController {
+final class DetailCollectionViewController: UICollectionViewController {
     let loadingView = LoadingViewController()
     var dogAPI = DogAPI()
     var dog: Breed?
@@ -16,10 +16,11 @@ final class DetailViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         guard let dog = dog else {
             return
         }
+        
         if let subBreed = dog.subBreed {
             title = "\(subBreed) \(dog.type)"
         } else {
@@ -35,7 +36,6 @@ final class DetailViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        createSpinnerView()
         fetchImages()
     }
     
@@ -60,8 +60,14 @@ final class DetailViewController: UICollectionViewController {
                     }
                 } catch {
                     print("Error Decoding")
+                    let ac = UIAlertController(title: "Error", message: "Failed to decode image URL's", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+                    present(ac, animated: true)
                 }
             case .failure(let error):
+                let ac = UIAlertController(title: "Error", message: "Failed to fetch Dog Images", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
+                present(ac, animated: true)
                 print(error.localizedDescription)
             }
         }
@@ -77,24 +83,10 @@ final class DetailViewController: UICollectionViewController {
                     images.append(image)
                 }
             }
-//            print(imageURL)
             count += 1
         }
         completion()
     }
-    
-//    func createSpinnerView() {
-//        let child = LoadingViewController()
-//
-//        // add the spinner view controller
-//
-//
-//        // wait two seconds to simulate some work happening
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            // then remove the spinner view controller
-//
-//        }
-//    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count

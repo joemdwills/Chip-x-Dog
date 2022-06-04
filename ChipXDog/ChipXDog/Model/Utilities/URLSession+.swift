@@ -15,32 +15,25 @@ extension URLSession {
                 
                 if status == .unauthorized {
                     completion(.failure(HTTPError.unauthorized))
-                }
-                else if status.category == .success,
+                } else if status.category == .success,
                     let data = data {
                     completion(.success(data))
-                }
-                else {
+                } else {
                     completion(.failure(HTTPError.serverResponse(status, data)))
                 }
-            }
-            else if let error = error {
+            } else if let error = error {
                 if let nsError = error as NSError?,
                     nsError.code == HTTPError.noNetwork.code {
                     completion(.failure(HTTPError.noNetwork))
-                }
-                else if let nsError = error as NSError?,
+                } else if let nsError = error as NSError?,
                     nsError.code == HTTPError.timeout.code {
                     completion(.failure(HTTPError.timeout))
-                }
-                else if let httpError = error as? HTTPError {
+                } else if let httpError = error as? HTTPError {
                     completion(.failure(httpError))
-                }
-                else {
+                } else {
                     completion(.failure(HTTPError.other(error)))
                 }
-            }
-            else {
+            } else {
                 completion(.failure(HTTPError.httpError))
             }
         }.resume()
