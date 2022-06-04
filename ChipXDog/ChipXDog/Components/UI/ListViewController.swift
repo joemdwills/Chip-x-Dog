@@ -13,7 +13,6 @@ final class ListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         title = "Chip x Dog API"
         fetchList()
     }
@@ -26,7 +25,6 @@ final class ListViewController: UITableViewController {
                     let list = try JSONDecoder().decode(Dogs.self, from: data)
                     print("----> Unaltered List: \(list)")
                     let mirrorList = Mirror(reflecting: list.message)
-//                    var subBreeds = [String]()
                     var breeds = [String]()
                     for (key, value) in mirrorList.children {
                         guard let key = key else { return }
@@ -41,7 +39,6 @@ final class ListViewController: UITableViewController {
                             }
                         }
                     }
-//                    print(subBreeds)
                     print("----> Breeds Count: \(breeds.count)")
                     print("----> Sub-breeds Count: \(self.dogs.count)")
                     
@@ -69,10 +66,13 @@ final class ListViewController: UITableViewController {
         if dog.subBreed == nil {
             cell.textLabel?.text = dog.type.capitalized
             cell.detailTextLabel?.text = ""
+            cell.accessibilityLabel = "Dog Breed, \(dog.type)"
         } else {
             cell.textLabel?.text = dog.type.capitalized
-            cell.detailTextLabel?.text = dog.subBreed?.capitalized
+            cell.detailTextLabel?.text = dog.subBreed!.capitalized
+            cell.accessibilityLabel = "Dog Breed, \(dog.subBreed! + dog.type)"
         }
+        
         return cell
     }
     
