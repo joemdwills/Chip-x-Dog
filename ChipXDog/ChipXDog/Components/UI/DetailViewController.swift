@@ -8,6 +8,7 @@
 import UIKit
 
 final class DetailViewController: UICollectionViewController {
+    let loadingView = LoadingViewController()
     var dogAPI = DogAPI()
     var dog: Breed?
     private var imageURLS: [String]?
@@ -26,10 +27,15 @@ final class DetailViewController: UICollectionViewController {
         }
         title = title?.capitalized
         
+        addChild(loadingView)
+        loadingView.view.frame = view.frame
+        view.addSubview(loadingView.view)
+        loadingView.didMove(toParent: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+//        createSpinnerView()
         fetchImages()
     }
     
@@ -44,8 +50,11 @@ final class DetailViewController: UICollectionViewController {
                     let json = try JSONDecoder().decode(Images.self, from: data)
                     imageURLS = json.message
                     loadImages { [self] in
-                        DispatchQueue.main.async {
-                            self.collectionView.reloadData()
+                        DispatchQueue.main.async { [self] in
+                            collectionView.reloadData()
+                            loadingView.willMove(toParent: nil)
+                            loadingView.view.removeFromSuperview()
+                            loadingView.removeFromParent()
                         }
                         print("----> Images Array Count: \(String(describing: images.count))")
                     }
@@ -73,6 +82,19 @@ final class DetailViewController: UICollectionViewController {
         }
         completion()
     }
+    
+//    func createSpinnerView() {
+//        let child = LoadingViewController()
+//
+//        // add the spinner view controller
+//
+//
+//        // wait two seconds to simulate some work happening
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            // then remove the spinner view controller
+//
+//        }
+//    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count
