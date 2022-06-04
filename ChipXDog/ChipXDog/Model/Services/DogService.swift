@@ -9,25 +9,31 @@ import Foundation
 
 protocol DOGAPIService: HTTPWebService {
     func fetchDogList(completion: @escaping (_ result: Result<Data, Error>) -> Void)
-    func fetchSingleDogImage(breed: String, subBreed: String, completion: @escaping (_ result: Result<Data, Error>) -> Void)
-    func fetchDogImages(breed: String, subBreed: String, completion: @escaping (_ result: Result<Data, Error>) -> Void)
+    func fetchSingleDogImage(breed: Breed, completion: @escaping (_ result: Result<Data, Error>) -> Void)
+    func fetchDogImages(breed: Breed, completion: @escaping (_ result: Result<Data, Error>) -> Void)
 }
 
 public struct DogService: DOGAPIService {
     
-    public enum API: APICall {
+    enum API: APICall {
         case fetchDogList
-        case fetchSingleDogImage(breed: String, subBreed: String)
-        case fetchDogImages(breed: String, subBreed: String)
+        case fetchSingleDogImage(breed: Breed)
+        case fetchDogImages(breed: Breed)
         
         var path: String {
             switch self {
             case .fetchDogList:
                 return "/breeds/list/all"
-            case .fetchSingleDogImage(let breed, let subBreed):
-                return "/breed/\(breed)/\(subBreed)/images/random"
-            case .fetchDogImages(let breed, let subBreed):
-                return "/breed/\(breed)/\(subBreed)/images"
+            case .fetchSingleDogImage(let breed):
+                guard let subBreed = breed.subBreed else {
+                    return "/breed/\(breed.type)/images"
+                }
+                return "/breed/\(breed.type)/\(subBreed)/images"
+            case .fetchDogImages(let breed):
+                guard let subBreed = breed.subBreed else {
+                    return "/breed/\(breed.type)/images"
+                }
+                return "/breed/\(breed.type)/\(subBreed)/images"
             }
         }
     }
@@ -41,14 +47,14 @@ public struct DogService: DOGAPIService {
         }
     }
     
-    func fetchSingleDogImage(breed: String, subBreed: String, completion: @escaping (_ result: Result<Data, Error>) -> Void) {
-        call(endpoint: API.fetchSingleDogImage(breed: breed, subBreed: subBreed)) { result in
+    func fetchSingleDogImage(breed: Breed, completion: @escaping (_ result: Result<Data, Error>) -> Void) {
+        call(endpoint: API.fetchSingleDogImage(breed: breed)) { result in
             completion(result)
         }
     }
     
-    func fetchDogImages(breed: String, subBreed: String, completion: @escaping (_ result: Result<Data, Error>) -> Void) {
-        call(endpoint: API.fetchDogImages(breed: breed, subBreed: subBreed)) { result in
+    func fetchDogImages(breed: Breed, completion: @escaping (_ result: Result<Data, Error>) -> Void) {
+        call(endpoint: API.fetchDogImages(breed: breed)) { result in
             completion(result)
         }
     }

@@ -15,8 +15,6 @@ final class ListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Chip x Dog API"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = UIColor.systemMint
         fetchList()
     }
     
@@ -35,11 +33,11 @@ final class ListViewController: UITableViewController {
                         breeds.append("\(key.capitalized)")
                         guard let value = value as? [Any] else { return }
                         if value.isEmpty {
-                            self.dogs.append(Breed(type: key.capitalized))
+                            self.dogs.append(Breed(type: key))
                         } else {
                             for subBreed in value {
                                 guard let subBreed = subBreed as? String else { return }
-                                self.dogs.append(Breed(type: key.capitalized, subBreed: subBreed.capitalized))
+                                self.dogs.append(Breed(type: key, subBreed: subBreed))
                             }
                         }
                     }
@@ -53,26 +51,9 @@ final class ListViewController: UITableViewController {
             case .failure(let error):
                 print(error.localizedDescription)
             }
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-            }
-        }
-    }
-    
-    func fetchImages() {
-        dogAPI.dogService.fetchDogImages(breed: "spaniel", subBreed: "cocker") { result in
-            switch result {
-            case .success(let data):
-                do {
-                    let json = try JSONDecoder().decode(Images.self, from: data)
-                    let images = json.message
-                    print("----> Images: \(images)")
-                    print(images.randomElement())
-                } catch {
-                    print("Error Decoding")
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
             }
         }
     }
@@ -86,13 +67,21 @@ final class ListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Dog", for: indexPath)
         let dog = dogs[indexPath.row]
         if dog.subBreed == nil {
-            cell.textLabel?.text = dog.type
+            cell.textLabel?.text = dog.type.capitalized
             cell.detailTextLabel?.text = ""
         } else {
-            cell.textLabel?.text = dog.type
-            cell.detailTextLabel?.text = dog.subBreed
+            cell.textLabel?.text = dog.type.capitalized
+            cell.detailTextLabel?.text = dog.subBreed?.capitalized
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let dvc = storyboard?.instantiateViewController(identifier: "DetailView") as? DetailViewController {
+            dvc.dog = dogs[indexPath.row]
+            navigationController?.pushViewController(dvc, animated: true)
+        }
+        
     }
 }
 
