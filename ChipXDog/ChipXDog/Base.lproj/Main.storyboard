@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1603" y="-304"/>
         </scene>
-        <!--Detail Collection View Controller-->
+        <!--Detail Collection View-->
         <scene sceneID="c4f-LI-ZpL">
             <objects>
-                <collectionViewController storyboardIdentifier="DetailCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="cM5-Wm-VD5" customClass="DetailCollectionViewController" customModule="ChipXDog" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="DetailCollectionView" useStoryboardIdentifierAsRestorationIdentifier="YES" interfaceStyle="light" id="cM5-Wm-VD5" customClass="DetailCollectionView" customModule="ChipXDog" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yZt-Se-5hT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

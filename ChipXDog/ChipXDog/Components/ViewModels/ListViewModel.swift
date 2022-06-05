@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class ListViewModel {
-    var dogAPI = DogAPI()
+    private var dogAPI = DogAPI()
     var dogs = [Breed]()
     
     let decoder = JSONDecoder()

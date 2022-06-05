@@ -43,8 +43,8 @@ final class ListView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let dvc = storyboard?.instantiateViewController(identifier: String(describing: DetailCollectionViewController.self)) as? DetailCollectionViewController {
-            dvc.dog = viewModel.dogs[indexPath.row]
+        if let dvc = storyboard?.instantiateViewController(identifier: String(describing: DetailCollectionView.self)) as? DetailCollectionView {
+            dvc.viewModel = DetailCollectionViewModel(dog: viewModel.dogs[indexPath.row])
             navigationController?.pushViewController(dvc, animated: true)
         }
     }
