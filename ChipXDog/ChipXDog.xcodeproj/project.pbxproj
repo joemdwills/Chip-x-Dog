@@ -10,6 +10,7 @@
 		0E41C7DE284AC1FE001397D4 /* SingleImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E41C7DD284AC1FE001397D4 /* SingleImageViewController.swift */; };
 		0E41C7E0284BA352001397D4 /* DogImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E41C7DF284BA352001397D4 /* DogImageCell.swift */; };
 		0E41C7E2284BD767001397D4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E41C7E1284BD767001397D4 /* LoadingViewController.swift */; };
+		0E41C7E9284CD1C4001397D4 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E41C7E8284CD1C4001397D4 /* ListViewModel.swift */; };
 		0E77DFDB2849163F00F5B2AB /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDA2849163F00F5B2AB /* DogAPI.swift */; };
 		0E77DFDE2849183900F5B2AB /* DogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDD2849183900F5B2AB /* DogService.swift */; };
 		0E77DFE0284918B300F5B2AB /* HTTPWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFDF284918B300F5B2AB /* HTTPWebService.swift */; };
@@ -20,7 +21,7 @@
 		0E77DFEB284A5B1D00F5B2AB /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E77DFEA284A5B1D00F5B2AB /* Breed.swift */; };
 		0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC612842B0A800365D3B /* AppDelegate.swift */; };
 		0EE5CC642842B0A800365D3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC632842B0A800365D3B /* SceneDelegate.swift */; };
-		0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC652842B0A800365D3B /* ListViewController.swift */; };
+		0EE5CC662842B0A800365D3B /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5CC652842B0A800365D3B /* ListView.swift */; };
 		0EE5CC692842B0A800365D3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE5CC672842B0A800365D3B /* Main.storyboard */; };
 		0EE5CC6B2842B0A900365D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EE5CC6A2842B0A900365D3B /* Assets.xcassets */; };
 		0EE5CC6E2842B0A900365D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EE5CC6C2842B0A900365D3B /* LaunchScreen.storyboard */; };
@@ -53,6 +54,7 @@
 		0E41C7DD284AC1FE001397D4 /* SingleImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageViewController.swift; sourceTree = "<group>"; };
 		0E41C7DF284BA352001397D4 /* DogImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogImageCell.swift; sourceTree = "<group>"; };
 		0E41C7E1284BD767001397D4 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		0E41C7E8284CD1C4001397D4 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		0E77DFDA2849163F00F5B2AB /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
 		0E77DFDD2849183900F5B2AB /* DogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogService.swift; sourceTree = "<group>"; };
 		0E77DFDF284918B300F5B2AB /* HTTPWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPWebService.swift; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 		0EE5CC5E2842B0A800365D3B /* ChipXDog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChipXDog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE5CC612842B0A800365D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EE5CC632842B0A800365D3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EE5CC652842B0A800365D3B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0EE5CC652842B0A800365D3B /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		0EE5CC682842B0A800365D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EE5CC6A2842B0A900365D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EE5CC6D2842B0A900365D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -204,7 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				0EE5CC9C284901AB00365D3B /* DetailCollectionViewController.swift */,
-				0EE5CC652842B0A800365D3B /* ListViewController.swift */,
+				0EE5CC652842B0A800365D3B /* ListView.swift */,
 				0E41C7E1284BD767001397D4 /* LoadingViewController.swift */,
 				0E41C7DD284AC1FE001397D4 /* SingleImageViewController.swift */,
 				0E41C7E7284C0F3F001397D4 /* Component */,
@@ -215,6 +217,7 @@
 		0EE5CC942842B12F00365D3B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0E41C7E8284CD1C4001397D4 /* ListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -376,7 +379,7 @@
 				0E77DFDB2849163F00F5B2AB /* DogAPI.swift in Sources */,
 				0E41C7E2284BD767001397D4 /* LoadingViewController.swift in Sources */,
 				0E77DFE228491CEA00F5B2AB /* APICall.swift in Sources */,
-				0EE5CC662842B0A800365D3B /* ListViewController.swift in Sources */,
+				0EE5CC662842B0A800365D3B /* ListView.swift in Sources */,
 				0E77DFE928497E1F00F5B2AB /* Images.swift in Sources */,
 				0E77DFE728492F3100F5B2AB /* HTTPError.swift in Sources */,
 				0EE5CC622842B0A800365D3B /* AppDelegate.swift in Sources */,
@@ -386,6 +389,7 @@
 				0E41C7E0284BA352001397D4 /* DogImageCell.swift in Sources */,
 				0E77DFDE2849183900F5B2AB /* DogService.swift in Sources */,
 				0E77DFE528492ECA00F5B2AB /* URLSession+.swift in Sources */,
+				0E41C7E9284CD1C4001397D4 /* ListViewModel.swift in Sources */,
 				0EE5CC642842B0A800365D3B /* SceneDelegate.swift in Sources */,
 				0E41C7DE284AC1FE001397D4 /* SingleImageViewController.swift in Sources */,
 				0E77DFE0284918B300F5B2AB /* HTTPWebService.swift in Sources */,
