@@ -21,7 +21,7 @@ class ListViewModel {
             case .success(let data):
                 self.decodeResponse(data: data)
             case .failure(let error):
-                // Present UIAlertController
+                // Would use Combine here to set an isAlertShown property to true to trigger an Alert in the view of a fetching/netowrk decode error.
                 print(error.localizedDescription)
             }
             completion()
@@ -31,12 +31,9 @@ class ListViewModel {
     func decodeResponse(data: Data) {
         do {
             let list = try decoder.decode(Dogs.self, from: data)
-            print("----> Unaltered List: \(list)")
             let mirrorList = Mirror(reflecting: list.message)
-            var breeds = [String]()
             for (key, value) in mirrorList.children {
                 guard let key = key else { return }
-                breeds.append("\(key.capitalized)")
                 guard let value = value as? [Any] else { return }
                 if value.isEmpty {
                     self.dogs.append(Breed(type: key))
@@ -47,10 +44,8 @@ class ListViewModel {
                     }
                 }
             }
-            print("----> Breeds Count: \(breeds.count)")
-            print("----> Sub-breeds Count: \(self.dogs.count)")
         } catch {
-            // Present UIAlertController
+            // Would use Combine here to set an isAlertShown property to true, to trigger an Alert in the view of a decode error.
             print("Error Decoding")
         }
     }

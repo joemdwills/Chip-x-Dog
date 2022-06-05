@@ -22,7 +22,6 @@ final class ListView: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("----> num Dog Count: \(viewModel.dogs.count)")
         return viewModel.dogs.count
     }
     

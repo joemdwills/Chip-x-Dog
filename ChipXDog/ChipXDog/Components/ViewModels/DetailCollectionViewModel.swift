@@ -5,6 +5,7 @@
 //  Created by Joe on 05/06/2022.
 //
 
+import Combine
 import Foundation
 import UIKit
 
@@ -37,9 +38,7 @@ class DetailCollectionViewModel {
                     completion()
                 }
             case .failure(let error):
-                let ac = UIAlertController(title: "Error", message: "Failed to fetch Dog Images", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
-//                present(ac, animated: true)
+                // Would use Combine here to set an isAlertShown property to true to trigger an Alert in the view of a fetching/netowrk decode error.
                 print(error.localizedDescription)
             }
         }
@@ -51,9 +50,7 @@ class DetailCollectionViewModel {
             imageURLS = json.message
         } catch {
             print("Error Decoding")
-            let ac = UIAlertController(title: "Error", message: "Failed to decode image URL's", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel))
-//            present(ac, animated: true)
+            // Would use Combine here to set an isAlertShown property to true, to trigger an Alert in the view of a decode error.
         }
     }
     

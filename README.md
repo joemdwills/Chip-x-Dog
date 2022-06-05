@@ -12,20 +12,12 @@ I chose to implement an MVVM Design Architecture for this challenge with the two
 ### Cons:
 - Design architecture requires additional files and work to setup
 
-## The Dog API
-
-
-### Pros:
-- Implemented Asynchronous methods to make use of the device's background threads to complete the API requests
-
-### Cons:
-
 ## Internet only App
 The application currently doesn't implement any logic to store the data locally (on-device). So it would not worl if the user did not have an internet connection.
 
 ### Pros:
 - Application size is small
-- App will show latest data from the API (currently no way to track any changes made in the API)
+- App will show latest data from the API (currently no way to track any changes made in the API) (Error will occur if there are changes made to the list of breeds)
 
 ### Cons:
 - User gets a bad experience when using the App with poor or no internet connection
@@ -34,8 +26,12 @@ The application currently doesn't implement any logic to store the data locally 
 Overall, I feel the application does what is required by the brief giving a user an ability to look at the vast amount of Dog breeds and then when they tap on one they are presented with a collection of 10 random images of that type. 
 
 However, there is always room for improvement and therefore if I were to take this to v2 I would implement the following:
+- [Minor Update] Use the UICollectionViewDataSourcePrefetching Protocol to only fetch each image of a breed on the Detail Screen when required. (This improve user experience)
+- [Minor Update] Convert DetailView to a PageViewController with a SingleImageUIView so that each image can be seen in a full-screen swipeable view.
 
-## Replace Completion Handlers with Async/Await methods or use Combine
+## Replace Completion Handlers with Async/Await methods and Combine
+- Using Combine would allow me to show alerts to the user if the fetchService/Decoding or loading of images failed.
+- Async/Await is a nicer syntax to read then completion handlers.
 
 ## Add a CoreData Model
 - So that users would be able to use the app without internet after an initial set of requests
@@ -43,7 +39,7 @@ However, there is always room for improvement and therefore if I were to take th
 
 A CoreData Model should then enable me to do the following:
 
-## Search Field (by name or type)
+## Search Field (by breed type or subBreed)
 Adding the ManagedObjectContext to the List view would enable me to query the data model with by either the Dog Breed Name or by Sub-Breed, giving the user a better experience.
 
 ## More detail for each row object in the list
